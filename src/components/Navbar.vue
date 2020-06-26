@@ -26,7 +26,7 @@
     </v-btn>
 
     <v-btn @click="setDrawer(!drawer)" text>
-      <span>{{ drawer ? 'Ocular Drawer' : 'Mostrar Drawer' }}</span>
+      <span class="hidden-sm-down">{{ drawer ? 'Ocular Drawer' : 'Mostrar Drawer' }}</span>
       <v-icon>{{ drawer ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
     </v-btn>
   </v-app-bar>

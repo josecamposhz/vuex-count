@@ -4,7 +4,6 @@
     v-model="inputValue"
     app
     dark
-    floating
     persistent
     mobile-breakpoint="991"
     width="260"
