@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer
     id="app-drawer"
-    v-model="drawer"
+    v-model="inputValue"
     app
     dark
     floating
@@ -12,14 +12,20 @@
     <v-list class="py-0">
       <v-list-item class="px-2">
         <v-list-item-avatar>
-          <img src="https://randomuser.me/api/portraits/men/81.jpg" />
+          <img :src="user.picture" />
         </v-list-item-avatar>
-        <v-list-item-title class="title">Application</v-list-item-title>
+        <v-list-item-title class="title">{{ user.name }}</v-list-item-title>
       </v-list-item>
 
       <v-divider />
 
-      <v-list-item v-for="item in items" :key="item.title" link>
+      <v-list-item
+        v-for="item in items"
+        :key="item.title"
+        link
+        :to="item.route"
+        active-class="primary"
+      >
         <v-list-item-icon>
           <v-icon>{{ item.icon }}</v-icon>
         </v-list-item-icon>
@@ -33,29 +39,30 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 
 export default {
   data: () => ({
     items: [
-      { title: "Dashboard", icon: "mdi-view-dashboard" },
-      { title: "Photos", icon: "mdi-image" },
-      { title: "About", icon: "mdi-help-box" }
+      { title: "Dashboard", icon: "mdi-view-dashboard", route: "/" },
+      { title: "Vuex", icon: "mdi-file-document", route: "/docs" },
+      { title: "Código", icon: "mdi-code-tags", route: "/code" }
     ]
   }),
   computed: {
-    drawer: {
-      get () {
-        return this.$store.state.drawer
+    ...mapState(["user"]),
+    inputValue: {
+      get() {
+        return this.$store.state.drawer;
       },
-      set () {
-        //this.setDrawer(val)
-      }
-    },
+      set() {}
+    }
+  },
+  mounted () {
+    this.getUser()
   },
   methods: {
-    setDrawer () {
-      this.$store.commit('setDrawer')
-    }
+    ...mapActions(['getUser'])
   }
 };
 </script>

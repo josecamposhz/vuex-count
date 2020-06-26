@@ -1,0 +1,66 @@
+<template>
+  <v-container>
+    <h1 class="text-center">Uso de Vuex</h1>
+    <h3>Accede a GitHub para ver el código fuente del ejemplo y clonarlo en tu computadora.</h3>
+    <v-btn dark href="https://github.com/JoseCamposhz/vuex-count" target="_blank" rel="noopener noreferrer">
+      GitHub
+      <v-icon class="ml-2">mdi-github</v-icon>
+    </v-btn>
+    <h3 class="mt-2">Estructura</h3>
+    <ul>
+      <li>
+        src
+        <ul>
+          <li>
+            assets
+            <ul>
+              <li>logo.png</li>
+              <li>logo.svg</li>
+            </ul>
+          </li>
+          <li>
+            components
+            <ul>
+              <li>Drawer.vue</li>
+              <li>Navbar.vue</li>
+            </ul>
+          </li>
+          <li>
+            plugins
+            <ul>
+              <li>vuetify.js</li>
+            </ul>
+          </li>
+          <li>
+            router
+            <ul>
+              <li>index.js</li>
+            </ul>
+          </li>
+          <li>
+            store
+            <ul>
+              <li>actions.js</li>
+              <li>getters.js</li>
+              <li>index.js</li>
+              <li>mutations.js</li>
+              <li>state.js</li>
+            </ul>
+          </li>
+          <li>
+            views
+            <ul>
+              <li>Code.vue</li>
+              <li>Hijo.vue</li>
+              <li>Nieto.vue</li>
+              <li>Padre.vue</li>
+              <li>Vuex.vue</li>
+            </ul>
+          </li>
+          <li>App.vue</li>
+          <li>main.js</li>
+        </ul>
+      </li>
+    </ul>
+  </v-container>
+</template>

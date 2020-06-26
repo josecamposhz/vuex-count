@@ -10,17 +10,15 @@
         width="40"
       />
 
-      <v-img
-        alt="Vuetify Name"
-        class="shrink mt-1 hidden-sm-and-down"
-        contain
-        min-width="100"
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-        width="100"
-      />
+      <h1 class="fw-light">Vuex Example</h1>
     </div>
 
     <v-spacer></v-spacer>
+
+    <v-btn text href="https://github.com/JoseCamposhz/vuex-count" target="_blank" rel="noopener noreferrer">
+      GitHub
+      <v-icon class="ml-2">mdi-github</v-icon>
+    </v-btn>
 
     <v-btn @click="setDrawer()" text>
       <span class="mr-2">{{ drawer ? 'Ocular Drawer' : 'Mostrar Drawer' }}</span>
@@ -30,6 +28,11 @@
 </template>
 
 <script>
+// Utilities
+import {
+  mapMutations
+} from 'vuex'
+
 export default {
   computed: {
     drawer() {
@@ -37,9 +40,13 @@ export default {
     }
   },
   methods: {
-    setDrawer() {
-      this.$store.commit("setDrawer");
-    }
+    ...mapMutations(['setDrawer'])
   }
 };
 </script>
+
+<style scoped>
+.fw-light {
+  font-weight: 400;
+}
+</style>

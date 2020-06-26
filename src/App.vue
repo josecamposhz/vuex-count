@@ -5,9 +5,10 @@
     <Navbar />
 
     <v-main>
-      <router-view />
+      <v-container>
+        <router-view />
+      </v-container>
     </v-main>
-    
   </v-app>
 </template>
 
@@ -22,9 +23,18 @@ export default {
     Navbar,
     Drawer
   },
-
   data: () => ({
     //
   })
 };
 </script>
+
+<style >
+.v-application code {
+  color: #f8f8f2 !important;
+  background: 0 0 !important;
+  background-color: initial !important;
+  font-size: 1em !important;
+  font-weight: normal !important;
+}
+</style>

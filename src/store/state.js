@@ -1,4 +1,5 @@
 export default {
-  drawer: true,
-  count: 0
+  drawer: false,
+  count: 0,
+  user: ''
 }

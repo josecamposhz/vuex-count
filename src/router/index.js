@@ -7,7 +7,15 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      component: () => import('../views/App')
+      component: () => import('../views/Padre')
+    },
+    {
+      path: '/docs',
+      component: () => import('../views/Vuex')
+    },
+    {
+      path: '/code',
+      component: () => import('../views/Code')
     },
     {
       path: '*',

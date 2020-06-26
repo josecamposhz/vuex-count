@@ -18,5 +18,8 @@ export default {
   },
   reset (state) {
     state.count = 0
+  },
+  setUser (state, user) {
+    state.user = user
   }
 }
