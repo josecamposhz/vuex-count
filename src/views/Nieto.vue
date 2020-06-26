@@ -2,16 +2,18 @@
   <v-row class="text-center">
     <v-col cols="12">
       <h1>Nieto</h1>
-    </v-col>
-    <v-col cols="6">
-      <h2>Sin Vuex</h2>
-      <h2>{{ localCount }}</h2>
-      <v-btn class="mx-2" color="error" dark @click="localReset()">Reset</v-btn>
-    </v-col>
-    <v-col cols="6">
-      <h2>Con Vuex</h2>
-      <h2>{{ count }}</h2>
-      <v-btn class="mx-2" color="error" dark @click="reset()">Reset</v-btn>
+      <v-row>
+        <v-col cols="6">
+          <h2>Sin Vuex</h2>
+          <h2>{{ localCount }}</h2>
+          <v-btn class="mx-2" color="error" dark @click="localReset()">Reset</v-btn>
+        </v-col>
+        <v-col cols="6">
+          <h2>Con Vuex</h2>
+          <h2>{{ count }}</h2>
+          <v-btn class="mx-2" color="error" dark @click="reset()">Reset</v-btn>
+        </v-col>
+      </v-row>
     </v-col>
   </v-row>
 </template>
@@ -35,7 +37,7 @@ export default {
       //this.localCount = 0;
 
       /* Evento emitido hacia el componente padre  */
-      this.setEmit('reset');
+      this.setEmit("reset");
     },
     setEmit(type) {
       this.$emit(type);
