@@ -7,14 +7,26 @@
         <v-col cols="6">
           <h2>Sin Vuex</h2>
           <h2>{{ localCount }}</h2>
-          <v-btn class="mx-2" color="warning" dark @click="setValue(-1)">Decrementar</v-btn>
-          <v-btn class="mx-2" color="success" dark @click="setValue(1)">Incrementar</v-btn>
+          <v-btn class="mx-2" color="warning" dark @click="setValue(-1)">
+            <span class="hidden-sm-down">Decrementar</span>
+            <v-icon>mdi-minus</v-icon>
+          </v-btn>
+          <v-btn class="mx-2" color="success" dark @click="setValue(1)">
+            <span class="hidden-sm-down">Incrementar</span>
+            <v-icon>mdi-plus</v-icon>
+          </v-btn>
         </v-col>
         <v-col cols="6">
           <h2>Con Vuex</h2>
           <h2>{{ count }}</h2>
-          <v-btn class="mx-2" color="warning" dark @click="decrementar()">Decrementar</v-btn>
-          <v-btn class="mx-2" color="success" dark @click="incrementar()">Incrementar</v-btn>
+          <v-btn class="mx-2" color="warning" dark @click="decrementar()">
+            <span class="hidden-sm-down">Decrementar</span>
+            <v-icon>mdi-minus</v-icon>
+          </v-btn>
+          <v-btn class="mx-2" color="success" dark @click="incrementar()">
+            <span class="hidden-sm-down">Incrementar</span>
+            <v-icon>mdi-plus</v-icon>
+          </v-btn>
         </v-col>
       </v-row>
     </v-col>

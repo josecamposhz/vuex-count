@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   data: () => ({
@@ -55,13 +55,16 @@ export default {
       get() {
         return this.$store.state.drawer;
       },
-      set() {}
+      set(val) {
+        this.setDrawer(val)
+      }
     }
   },
   mounted () {
     this.getUser()
   },
   methods: {
+    ...mapMutations(['setDrawer']),
     ...mapActions(['getUser'])
   }
 };

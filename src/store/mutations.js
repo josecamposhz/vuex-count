@@ -1,8 +1,8 @@
 //import { set, toggle } from '@/utils/vuex'
 
 export default {
-  setDrawer (state) {
-    state.drawer = !state.drawer
+  setDrawer (state, payload) {
+    state.drawer = payload
   },
   incrementar (state) {
     state.count++

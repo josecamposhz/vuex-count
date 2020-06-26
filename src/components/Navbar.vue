@@ -10,18 +10,23 @@
         width="40"
       />
 
-      <h1 class="fw-light">Vuex Example</h1>
+      <h1 class="navbar-title fw-light">Vuex Example</h1>
     </div>
 
     <v-spacer></v-spacer>
 
-    <v-btn text href="https://github.com/JoseCamposhz/vuex-count" target="_blank" rel="noopener noreferrer">
+    <v-btn
+      text
+      href="https://github.com/JoseCamposhz/vuex-count"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       GitHub
-      <v-icon class="ml-2">mdi-github</v-icon>
+      <v-icon>mdi-github</v-icon>
     </v-btn>
 
-    <v-btn @click="setDrawer()" text>
-      <span class="mr-2">{{ drawer ? 'Ocular Drawer' : 'Mostrar Drawer' }}</span>
+    <v-btn @click="setDrawer(!drawer)" text>
+      <span>{{ drawer ? 'Ocular Drawer' : 'Mostrar Drawer' }}</span>
       <v-icon>{{ drawer ? 'mdi-arrow-left' : 'mdi-arrow-right' }}</v-icon>
     </v-btn>
   </v-app-bar>
@@ -29,18 +34,14 @@
 
 <script>
 // Utilities
-import {
-  mapMutations
-} from 'vuex'
+import { mapState, mapMutations } from "vuex";
 
 export default {
   computed: {
-    drawer() {
-      return this.$store.state.drawer;
-    }
+    ...mapState(["drawer"])
   },
   methods: {
-    ...mapMutations(['setDrawer'])
+    ...mapMutations(["setDrawer"])
   }
 };
 </script>
@@ -48,5 +49,12 @@ export default {
 <style scoped>
 .fw-light {
   font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .navbar-title {
+    font-size: 1.5em !important;
+    line-height: 0.75em !important;
+  }
 }
 </style>

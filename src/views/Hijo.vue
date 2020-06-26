@@ -6,14 +6,26 @@
         <v-col cols="6">
           <h2>Sin Vuex</h2>
           <h2>{{ localCount }}</h2>
-          <v-btn class="mx-2" color="warning" dark @click="localDividir()">dividir</v-btn>
-          <v-btn class="mx-2" color="success" dark @click="localMultiplicar()">multiplicar</v-btn>
+          <v-btn class="mx-2" color="warning" dark @click="localDividir()">
+            <span class="hidden-sm-down">Dividir</span>
+            <v-icon>mdi-division</v-icon>
+          </v-btn>
+          <v-btn class="mx-2" color="success" dark @click="localMultiplicar()">
+            <span class="hidden-sm-down">Multiplicación</span>
+            <v-icon>mdi-multiplication</v-icon>
+          </v-btn>
         </v-col>
         <v-col cols="6">
           <h2>Con Vuex</h2>
           <h2>{{ count }}</h2>
-          <v-btn class="mx-2" color="warning" dark @click="dividir()">dividir</v-btn>
-          <v-btn class="mx-2" color="success" dark @click="multiplicar()">multiplicar</v-btn>
+          <v-btn class="mx-2" color="warning" dark @click="dividir()">
+            <span class="hidden-sm-down">Dividir</span>
+            <v-icon>mdi-division</v-icon>
+          </v-btn>
+          <v-btn class="mx-2" color="success" dark @click="multiplicar()">
+            <span class="hidden-sm-down">Multiplicación</span>
+            <v-icon>mdi-multiplication</v-icon>
+          </v-btn>
         </v-col>
       </v-row>
     </v-col>
